@@ -81,7 +81,7 @@ function char2() {
     var myChart = echarts.init(document.getElementById('char2'));  
     option = {
         // backgroundColor: "#404A59",
-        color: ["#036BC8", "#5EBEFC", "#2EF7F3"],
+        color: ["#5EBEFC", "#2EF7F3"],
     
         title: [{
             text: '',
@@ -109,7 +109,7 @@ function char2() {
             textStyle: {
                 color: '#ffd285',
             },
-            data: ['2016年', '2017年', '2018年']
+            data: ['今天', '当月']
         },
         grid: {
             left: '1%',
@@ -140,7 +140,7 @@ function char2() {
                 }
             },
             boundaryGap: false,
-            data: ['1', '2', '3', '4', '5', '6', '7','8','9','10','11','12']
+            data: ['4', '8', '12', '16', '20', '24']
         },
         yAxis: {
             "axisLine": {
@@ -165,27 +165,20 @@ function char2() {
             type: 'value'
         },
         series: [{
-            name: '',
+            name: '今天',
             smooth: true,
             type: 'line',
             symbolSize: 9,
               symbol: 'circle',
-            data: [90, 50, 39, 50, 120, 82, 80, 89, 92, 80, 102, 77]
+            data: [11, 16, 22, 28, 30,40]
         }, {
-            name: '',
+            name: '当月',
             smooth: true,
             type: 'line',
             symbolSize: 9,
               symbol: 'circle',
-            data: [70, 50, 50, 87, 90, 80, 70, 77, 86, 94, 96, 99]
-        }, {
-            name: '',
-            smooth: true,
-            type: 'line',
-            symbolSize: 9,
-              symbol: 'circle',
-            data: [100, 112, 80, 132, 60, 70, 90, 131, 121, 102, 95, 105 ]
-        }, 
+              data: [8, 15, 18, 20, 25, 28]
+        },
         {
             type: 'pie',
             center: ['83%', '33%'],
@@ -205,7 +198,7 @@ function char2() {
                 },
                 label: {
                     normal: {
-                        formatter: '{d} %',
+                        formatter: '{d}',
                         textStyle: {
                             color: '#ffd285',
                             fontSize: 14
@@ -229,7 +222,7 @@ function char2() {
                         textStyle: {
                             color: '#ffd285',
                         },
-                        formatter: '\n销售渠道'
+                        formatter: '\n今日故障数'
                     }
                 }
             }]
@@ -246,8 +239,8 @@ function char2() {
                 }
             },
             data: [{
-                value: 435,
-                name: '销售分析',
+                value: 410,
+                name: '故障分析',
                 itemStyle: {
                     normal: {
                         color: '#4834CB'
@@ -255,7 +248,7 @@ function char2() {
                 },
                 label: {
                     normal: {
-                        formatter: '{d} %',
+                        formatter: '{d}',
                         textStyle: {
                             color: '#fff',
                             fontSize: 14
@@ -272,8 +265,6 @@ function char2() {
                 itemStyle: {
                     normal: {
                         color: '#fff'
-    
-    
                     }
                 },
                 label: {
@@ -281,7 +272,7 @@ function char2() {
                         textStyle: {
                             color: '#fff',
                         },
-                        formatter: '\n销售方向'
+                        formatter: '\n当月故障数'
                     }
                 }
             }]
@@ -556,15 +547,15 @@ function char5() {
     var lineChart = echarts.init(document.getElementById('lineChart'));
     lineChart.setOption({
 
-      color:["#87cefa","#ff7f50",],
+      color:["#87cefa","#ff7f50","#32cd32","#da70d6",],
       legend: {
-          y : '260',
+          y : 'top',
           x : 'center',
           textStyle : {
               color : '#ffffff',
 
           },
-           data : ['厦门第一医院','厦门中山医院',],
+           data : ['当月','今日',],
       },
       calculable : false,
       tooltip : {
@@ -600,7 +591,7 @@ function char5() {
         xAxis: [
             {
                 type: 'category',
-                data : ['00:00','2:00','4:00','6:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00','24:00'],
+                data : ['0:00','4:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00'],
                 axisLine:{
                     lineStyle:{
                         color: '#034c6a'
@@ -633,7 +624,7 @@ function char5() {
         },
         series : [
           {
-              name:'厦门第一医院',
+              name:'当月',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -643,10 +634,10 @@ function char5() {
                       }
                   }
               },
-              data:[15, 0, 20, 45, 22.1, 25, 70, 55, 76,88,99,101,102]
+              data:[3,5,10,15, 0, 20, 45, 22.1, 25, 70, 55, 76]
           },
           {
-              name:'厦门中山医院',
+              name:'今日',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -656,25 +647,26 @@ function char5() {
                       }
                   }
               },
-              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76,90,102,110,120]
+              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76]
           }
       ]
     });
+
 }
 
 function char6() {
     var lineChart = echarts.init(document.getElementById('lineChart2'));
     lineChart.setOption({
 
-      color:["#87cefa","#ff7f50",],
+      color:["#87cefa","#ff7f50","#32cd32","#da70d6",],
       legend: {
-          y : '260',
+          y : 'top',
           x : 'center',
           textStyle : {
               color : '#ffffff',
 
           },
-           data : ['厦门第一医院','厦门中山医院',],
+           data : ['当月','今日',],
       },
       calculable : false,
       tooltip : {
@@ -710,7 +702,7 @@ function char6() {
         xAxis: [
             {
                 type: 'category',
-                data : ['00:00','2:00','4:00','6:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00','24:00'],
+                data : ['0:00','4:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00'],
                 axisLine:{
                     lineStyle:{
                         color: '#034c6a'
@@ -743,7 +735,7 @@ function char6() {
         },
         series : [
           {
-              name:'厦门第一医院',
+              name:'当月',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -753,10 +745,10 @@ function char6() {
                       }
                   }
               },
-              data:[15, 0, 20, 45, 22.1, 25, 70, 55, 76,88,99,101,102]
+              data:[3,5,10,15, 0, 20, 45, 22.1, 25, 70, 55, 76]
           },
           {
-              name:'厦门中山医院',
+              name:'今日',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -766,25 +758,26 @@ function char6() {
                       }
                   }
               },
-              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76,90,102,110,120]
+              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76]
           }
       ]
     });
+
 }
 
 function char7() {
     var lineChart = echarts.init(document.getElementById('lineChart3'));
     lineChart.setOption({
 
-      color:["#87cefa","#ff7f50",],
+      color:["#87cefa","#ff7f50","#32cd32","#da70d6",],
       legend: {
-          y : '260',
+          y : 'top',
           x : 'center',
           textStyle : {
               color : '#ffffff',
 
           },
-           data : ['厦门第一医院','厦门中山医院',],
+           data : ['当月','今日',],
       },
       calculable : false,
       tooltip : {
@@ -820,7 +813,7 @@ function char7() {
         xAxis: [
             {
                 type: 'category',
-                data : ['00:00','2:00','4:00','6:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00','24:00'],
+                data : ['0:00','4:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00'],
                 axisLine:{
                     lineStyle:{
                         color: '#034c6a'
@@ -853,7 +846,7 @@ function char7() {
         },
         series : [
           {
-              name:'厦门第一医院',
+              name:'当月',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -863,10 +856,10 @@ function char7() {
                       }
                   }
               },
-              data:[15, 0, 20, 45, 22.1, 25, 70, 55, 76,88,99,101,102]
+              data:[3,5,10,15, 0, 20, 45, 22.1, 25, 70, 55, 76]
           },
           {
-              name:'厦门中山医院',
+              name:'今日',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -876,25 +869,26 @@ function char7() {
                       }
                   }
               },
-              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76,90,102,110,120]
+              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76]
           }
       ]
     });
+
 }
 
 function char8() {
     var lineChart = echarts.init(document.getElementById('lineChart4'));
     lineChart.setOption({
 
-      color:["#87cefa","#ff7f50",],
+      color:["#87cefa","#ff7f50","#32cd32","#da70d6",],
       legend: {
-          y : '260',
+          y : 'top',
           x : 'center',
           textStyle : {
               color : '#ffffff',
 
           },
-           data : ['厦门第一医院','厦门中山医院',],
+           data : ['当月','今日',],
       },
       calculable : false,
       tooltip : {
@@ -930,7 +924,7 @@ function char8() {
         xAxis: [
             {
                 type: 'category',
-                data : ['00:00','2:00','4:00','6:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00','24:00'],
+                data : ['0:00','4:00','8:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00'],
                 axisLine:{
                     lineStyle:{
                         color: '#034c6a'
@@ -963,7 +957,7 @@ function char8() {
         },
         series : [
           {
-              name:'厦门第一医院',
+              name:'当月',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -973,10 +967,10 @@ function char8() {
                       }
                   }
               },
-              data:[15, 0, 20, 45, 22.1, 25, 70, 55, 76,88,99,101,102]
+              data:[3,5,10,15, 0, 20, 45, 22.1, 25, 70, 55, 76]
           },
           {
-              name:'厦门中山医院',
+              name:'今日',
               type:'line',
               smooth:true,
               itemStyle: {
@@ -986,10 +980,11 @@ function char8() {
                       }
                   }
               },
-              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76,90,102,110,120]
+              data:[25, 10, 30, 55, 32.1, 35, 80, 65, 76]
           }
       ]
     });
+
 }
 
 
