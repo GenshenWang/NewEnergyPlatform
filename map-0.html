@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,6 +8,9 @@
     <link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="js/jQueryPage/src/jquery.page.css">
     <link rel="stylesheet" href="css/base.css">
+   
+
+
 </head>
 
 <body>
@@ -31,16 +34,46 @@
                 <li><i class="nav_4"></i><a href="table1.html">表格界面</a> </li>
             </ul>
         </div>
-        
+        <!--<nav class="left nav">-->
+        <!--<ul>-->
+        <!--<li class="nav_active"><i class="nav_1"></i><a href="index.html">数据概览</a> </li>-->
+        <!--<li><i class="nav_2"></i><a href="carContrl.html">车辆监控</a> </li>-->
+        <!--<li><i class="nav_3"></i><a href="map.html">地图界面</a> </li>-->
+        <!--<li><i class="nav_4"></i><a href="javascript:void(0)">表格界面</a><ul class="li_ul">-->
+        <!--<li><a href="table1.html">表格一</a> </li>-->
+        <!--<li><a href="table2.html">表格二</a> </li>-->
+
+        <!--</ul> </li>-->
+        <!--&lt;!&ndash;<li><i class="nav_5"></i><a href="#">车载视频</a> </li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li><i class="nav_6"></i><a href="#">视频监控</a> </li>&ndash;&gt;-->
+        <!--<li><i class="nav_7"></i><a href="static.html">查询统计</a> </li>-->
+        <!--<li><i class="nav_8"></i><a href="message.html">信息录入</a> </li>-->
+        <!--</ul>-->
+        <!--</nav>-->
     </header>
     <!--内容部分-->
     <div class="map_con left" id="car_control">
         <!--左侧地图-->
-        <div class="left map_left">   
-            <div id="container" style="width: 100%; height: 100%"></div> 
+        <div class="left map_left">
             <div  class="map_box" id="map_box"></div>
-            <!-- <div class="map_top">
-            </div> -->
+      <div class="map_top">
+          <ul>
+              <li class="active"><i class="glyphicon glyphicon-pencil"></i><a href="javascript:void (0)" class="active">图层选择</a> </li>
+              <li><i class="glyphicon glyphicon-zoom-in"></i><a href="javascript:void (0)">缩小</a> </li>
+              <li><i class="glyphicon glyphicon-zoom-out"></i><a href="javascript:void (0)">放大</a> </li>
+              <li><i class="glyphicon glyphicon-screenshot"></i><a href="javascript:void (0)">对比</a> </li>
+              <li><i class="glyphicon glyphicon-search"></i><a href="javascript:void (0)">搜索</a> </li>
+              <li><i class="glyphicon glyphicon-wrench"></i><a href="javascript:void (0)">工具</a> </li>
+              <li><i class="glyphicon glyphicon-fullscreen"></i><a href="javascript:void (0)">全屏</a> </li>
+          </ul>
+      </div>
+      <div class="map_select">
+          <p><input type="checkbox"><span>人员</span></p>
+          <p><input type="checkbox"><span>车辆</span></p>
+          <p><input type="checkbox"><span>房屋</span></p>
+          <p><input type="checkbox"><span>摄像头</span></p>
+      </div>
+
         </div>
 
         <!--右侧功能栏-->
@@ -201,32 +234,20 @@
             </div>
 
         </div>
+
     </div>
    
+
     <script src="js/jquery/jQuery-2.2.0.min.js"></script>
     <script src="js/base.js"></script>
     <script src="js/echarts-all.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>       
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>
     <script src="js/jQueryPage/src/jquery.page.js"></script>
     <script src="js/map_control.js"></script>
     <script src="js/ztree/jquery.ztree.all-3.5.js"></script>
     <script src="js/listTree.js"></script>
-    <script
-    type="text/javascript"
-    src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"
-  ></script>
-  <script type="text/javascript" src="./json/car.js"></script>
 
-    <script>
-        var map = new BMap.Map("container");
-        var point = new BMap.Point(116.418261, 39.921984);
-        map.centerAndZoom(point, 15); 
-        map.enableScrollWheelZoom(); 
-        heatmapOverlay = new BMapLib.HeatmapOverlay({ radius: 30 });
-        map.addOverlay(heatmapOverlay);
-        heatmapOverlay.setDataSet({ data: points, max: 5 });
-        heatmapOverlay.show(); 
-    </script>
 </body>
 
 </html>
