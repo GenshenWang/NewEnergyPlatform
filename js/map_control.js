@@ -3,7 +3,7 @@
  */
 $(function(){
     getHt();
-    initMap();
+    //initMap();
     mapActive();
     char1();
     page();
